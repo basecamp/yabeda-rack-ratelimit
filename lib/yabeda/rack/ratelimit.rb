@@ -14,7 +14,5 @@ Yabeda.configure do
   gauge   :quota_consumed_ratio, comment: "The ratio of quota consumed to quota available"
 end
 
-Yabeda.configure!
-
 require_relative "ratelimit/instrumentation"
 Rack::Ratelimit.prepend Yabeda::Rack::Ratelimit::Instrumentation

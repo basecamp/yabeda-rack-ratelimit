@@ -4,6 +4,8 @@ require "rack/ratelimit"
 require "yabeda/rack/ratelimit"
 require "yabeda/testing"
 
+Yabeda.configure!
+
 class Yabeda::Rack::RatelimitTest < Minitest::Test
   def setup
     @app = ->(env) { [200, {}, []] }
