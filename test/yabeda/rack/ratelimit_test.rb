@@ -21,7 +21,7 @@ class Yabeda::Rack::RatelimitTest < Minitest::Test
     assert_equal 9, yabeda_counter_value(:exceeded_requests_total, name: "myname")
     assert_equal 1, yabeda_counter_value(:clients_total, name: "myname")
     assert_equal 1, yabeda_counter_value(:exceeded_clients_total, name: "myname")
-    assert_equal 1000, yabeda_gauge_value(:quota_consumed_ratio, name: "myname")
+    assert_equal 10, yabeda_gauge_value(:quota_consumed_ratio, name: "myname")
   end
 
   private

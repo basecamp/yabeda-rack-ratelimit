@@ -9,10 +9,10 @@ module Yabeda
           end
 
           def report_stats(remaining)
-            quota_percentage = 100 * (1 - remaining.to_f / @max)
+            quota_consumed_ratio = (1 - remaining.to_f / @max)
 
             Yabeda.rack_ratelimit.requests_total.increment({name: @name})
-            Yabeda.rack_ratelimit.quota_consumed_ratio.set({name: @name}, quota_percentage)
+            Yabeda.rack_ratelimit.quota_consumed_ratio.set({name: @name}, quota_consumed_ratio)
 
             case remaining
             when @max - 1 # On the first request within a rate-limiting period
