@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+VERSION=$1
+
+printf "module Yabeda\n  module Rack\n    module Ratelimit\n      VERSION = \"$VERSION\"\n    end\n  end\nend\n" > ./lib/yabeda/rack/ratelimit/version.rb
+bundle
+git add Gemfile.lock lib/yabeda/rack/ratelimit/version.rb
+git commit -m "Bump version for $VERSION"
+git push
+git tag v$VERSION
+git push --tags
+gem build yabeda-rack-ratelimit.gemspec
+gem push "yabeda-rack-ratelimit-$VERSION.gem" --host https://rubygems.org
+rm "yabeda-rack-ratelimit-$VERSION.gem"
