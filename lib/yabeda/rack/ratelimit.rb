@@ -11,7 +11,7 @@ Yabeda.configure do
   counter :exceeded_requests_total, comment: "The total number of requests that exceeded rate limits"
   counter :clients_total, comment: "The total number of clients considered for rate limiting"
   counter :exceeded_clients_total, comment: "The total number of clients that exceeded rate limits"
-  gauge   :quota_consumed_ratio, comment: "The ratio of quota consumed to quota available"
+  gauge   :quota_consumed_ratio, comment: "The ratio of quota consumed to quota available", aggregation: :most_recent
 end
 
 require_relative "ratelimit/instrumentation"
