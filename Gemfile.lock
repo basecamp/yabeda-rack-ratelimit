@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yabeda-rack-ratelimit (0.1.0)
+    yabeda-rack-ratelimit (0.1.1)
       rack-ratelimit
       yabeda
 
