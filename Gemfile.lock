@@ -14,7 +14,7 @@ GEM
     dry-initializer (3.1.1)
     minitest (5.18.1)
     rack-ratelimit (1.2.1)
-    rake (13.0.6)
+    rake (13.3.1)
     ruby-next-core (0.15.3)
     yabeda (0.11.0)
       anyway_config (>= 1.0, < 3)
@@ -23,6 +23,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   minitest
