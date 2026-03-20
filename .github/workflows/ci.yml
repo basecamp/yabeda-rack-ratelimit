@@ -1,5 +1,9 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request: [opened, synchronize]
 permissions: {}
 jobs:
   lint-actions:
@@ -27,7 +31,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@50fbc622fc4ef5163becd7fab6573eac35f8462e # v1.2.0
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
 
@@ -38,7 +42,7 @@ jobs:
           rubygems: latest
 
       - name: Cache gem dependencies
-        uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3.5.0
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-bundler-${{ hashFiles('**/Gemfile.lock') }}
