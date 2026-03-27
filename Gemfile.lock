@@ -12,7 +12,7 @@ GEM
       ruby-next-core (>= 0.14.0)
     concurrent-ruby (1.2.2)
     dry-initializer (3.1.1)
-    minitest (5.18.1)
+    minitest (5.26.1)
     rack-ratelimit (1.2.1)
     rake (13.3.1)
     ruby-next-core (0.15.3)
